@@ -19,7 +19,7 @@ def button_equal():
 
 def button_operator(operator):
     current = display.get()
-    if current and current[-1] not in "+-*/^":  # Prevent consecutive operators
+    if current and current[-1] not in "+-*/^": 
         display.insert(END, operator)
 
 # Create the main window
@@ -61,8 +61,8 @@ button_8 = create_button("8", lambda: button_click(8))
 button_9 = create_button("9", lambda: button_click(9))
 button_0 = create_button("0", lambda: button_click(0))
 button_add = create_button("+", lambda: button_operator("+"))
-button_equal = create_button("=", lambda: button_equal())
-button_clear = create_button("Clear", button_clear) 
+button_equal = create_button("=", button_equal)  # Correctly pass the function
+button_clear = create_button("Clear", button_clear)
 button_subtract = create_button("-", lambda: button_operator("-"))
 button_multiply = create_button("*", lambda: button_operator("*"))
 button_divide = create_button("/", lambda: button_operator("/"))
